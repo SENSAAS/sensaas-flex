@@ -45,20 +45,21 @@ Launch Anaconda Prompt, then complete the installation:
 	conda create -n sensaas
 	conda activate sensaas
 	conda install python=3.7 numpy
+	conda install perl
 
 Once Open3D downloaded:
   
  	conda install open3d-0.12.0-py37_0.tar.bz2
 
-(Optional) Additional packages for visualization with PyMOL:
+Install RDKit (Open-Source Cheminformatics Software) that is compatible with Python 3.7:
 
-  	conda install -c schrodinger pymol
- 
- If an error regarding PyQT occurs then:
- 
- 	conda install -c anaconda pyqt
+	pip install rdkit-pypi
 	
-Retrieve and unzip SENSAAS-PY repository in your desired folder. See below for running the program **sensaas.py** or **meta-sensaas.py**. The directory containing executables is called sensaas-py-main.
+(Optional) Additional packages for visualization with PyMOL that is compatible with the current environnment:
+
+  	conda install conda-forge::pymol-open-source==2.4.0
+	
+Retrieve and unzip sensaas-flex repository in your desired folder. See below for running the programs **sensaas.py** or **meta-sensaas.py** for using the rigid version or **sensaasflex.py** or **meta-sensaasflex.py** for using the flexible version. The directory containing executables is called sensaas-flex-main.
 
 ## Linux
 
@@ -71,11 +72,12 @@ Install:
 
 3. PyMOL (a molecular viewer; more information at [https://pymolwiki.org](https://pymolwiki.org))
   
-Retrieve and unzip SENSAAS-PY repository. The directory containing executables is called sensaas-py-main.
+Retrieve and unzip sensaas-flex repository. The directory containing executables is called sensaas-flex-main.
 
 ## MacOS
 
 	Not tested
+
 
 ## Run Sensaas
 To align a Source molecule on a Target molecule, the syntax is:
@@ -138,7 +140,7 @@ When executing meta-sensaas.py, you can iterate the alignment by using the optio
 
 	meta-sensaas.py molecules-target.sdf molecules-source.sdf -l 2
 
-here the alignment will be evaluated twice and the best of the two will be kept.
+here the calculation is performed twice and only the highest-scoring alignment is selected.
 
 **Post-processing**
 
@@ -218,7 +220,6 @@ or after executing meta-sensaas.py with the repeat option (State 1 is Target and
 	pymol examples/VALSARTAN.sdf sensaas-1.sdf
 
 
-
 ## Licenses
 SENSAAS code is released under [the 3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
@@ -226,6 +227,24 @@ SENSAAS code is released under [the 3-Clause BSD License](https://opensource.org
 Copyright (c) 2018-2021, CNRS, Inserm, Université Côte d'Azur, Dominique Douguet and Frédéric Payan, All rights reserved.
 
 ## Reference
+[SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space](https://doi.org/10.1093/bioinformatics/btae105)
+
+Bibtex format :
+
+@article{10.1093/bioinformatics/btae105,
+    author = {Biyuzan, Hamza and Masrour, Mohamed-Akram and Grandmougin, Lucas and Payan, Frédéric and Douguet, Dominique},
+    title = {SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space},
+    journal = {Bioinformatics},
+    volume = {40},
+    number = {3},
+    pages = {btae105},
+    year = {2024},
+    month = {02},
+    doi = {10.1093/bioinformatics/btae105},
+    url = {https://doi.org/10.1093/bioinformatics/btae105},
+    eprint = {https://academic.oup.com/bioinformatics/article-pdf/40/3/btae105/56886864/btae105.pdf},
+}
+
 [Douguet D. and Payan F., SenSaaS: Shape-based Alignment by Registration of Colored Point-based Surfaces, *Molecular Informatics*, **2020**, 8, 2000081](https://onlinelibrary.wiley.com/doi/full/10.1002/minf.202000081). doi: 10.1002/minf.202000081
    
 Bibtex format :
