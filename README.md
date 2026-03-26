@@ -220,6 +220,9 @@ or after executing meta-sensaas.py with the repeat option (State 1 is Target and
 	pymol examples/VALSARTAN.sdf sensaas-1.sdf
 
 
+## Run sensaasflex.pl
+
+
 ## Licenses
 SENSAAS code is released under [the 3-Clause BSD License](https://opensource.org/licenses/BSD-3-Clause)
 
