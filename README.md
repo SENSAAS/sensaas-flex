@@ -231,7 +231,7 @@ Copyright (c) 2018-2021, CNRS, Inserm, Université Côte d'Azur, Dominique Dougu
 
 Bibtex format :
 
-@article{10.1093/bioinformatics/btae105,
+	@article{10.1093/bioinformatics/btae105,
     author = {Biyuzan, Hamza and Masrour, Mohamed-Akram and Grandmougin, Lucas and Payan, Frédéric and Douguet, Dominique},
     title = {SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space},
     journal = {Bioinformatics},
@@ -243,7 +243,7 @@ Bibtex format :
     doi = {10.1093/bioinformatics/btae105},
     url = {https://doi.org/10.1093/bioinformatics/btae105},
     eprint = {https://academic.oup.com/bioinformatics/article-pdf/40/3/btae105/56886864/btae105.pdf},
-}
+	}
 
 [Douguet D. and Payan F., SenSaaS: Shape-based Alignment by Registration of Colored Point-based Surfaces, *Molecular Informatics*, **2020**, 8, 2000081](https://onlinelibrary.wiley.com/doi/full/10.1002/minf.202000081). doi: 10.1002/minf.202000081
    
