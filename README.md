@@ -68,9 +68,13 @@ Install:
 1. Python3.7 and numpy
 2. Open3D version 0.12.0 (more information at [http://www.open3d.org/docs/release/getting_started.html](http://www.open3d.org/docs/release/getting_started.html))
 
+The open-Source Cheminformatics Software RDKit must be installed. More information on RDKit can be found at [https://www.rdkit.org/docs/Install.html](https://www.rdkit.org/docs/Install.html) 
+
+3. RDKit
+
 (Optional) Install additional packages for visualization with PyMOL:
 
-3. PyMOL (a molecular viewer; more information at [https://pymolwiki.org](https://pymolwiki.org))
+4. PyMOL (a molecular viewer; more information at [https://pymolwiki.org](https://pymolwiki.org))
   
 Retrieve and unzip sensaas-flex repository. The directory containing executables is called sensaas-flex-main.
 
@@ -221,6 +225,29 @@ or after executing meta-sensaas.py with the repeat option (State 1 is Target and
 
 
 ## Run sensaasflex.pl
+
+
+## RMSD calculation
+
+If two molecules are exactly the same then they possess the same 3D graph. In such case, the root-mean-square distance (RMSD) of corresponding atom pairs in 3D graphs can be calculated using two RDKit based tools (both are present in the folder utils).
+
+**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
+
+Syntax (‘in place’ RMSD calculation):
+
+	rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
+	
+Syntax (minimizes RMSD and writes transformation matrix called rdkit-tran.txt):
+
+	rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
+
+**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
+
+In the present case study, we use that one because our atoms are not in the same order in the sdf files. We obtain:
+
+	rdkit-CalcLigRMSD.py P04035-7.sdf Source_tran.sdf
+
+RMSD= 3.36
 
 
 ## Licenses
