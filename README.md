@@ -235,6 +235,28 @@ or after executing meta-sensaas.py with the repeat option (State 1 is Target and
 	pymol examples/VALSARTAN.sdf sensaas-1.sdf
 
 
+## RMSD calculation
+
+If two molecules are exactly the same then they possess the same 3D graph. In such case, the root-mean-square distance (RMSD) of corresponding atom pairs in 3D graphs can be calculated using two RDKit based tools (both are present in the folder utils).
+
+**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
+
+Syntax for ‘in place’ RMSD calculation:
+
+	python usils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
+	
+Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tran.txt:
+
+	python utils/rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
+
+
+**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
+
+The syntax is:
+
+	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
+
+
 ## Run sensaasflex.py
 
 This "meta" script only works with SDF format files. This script allows to run flexible alignment of two shapes by optimizing the conformer of the Source. 
@@ -272,26 +294,38 @@ RMSD= 1.04
 	pymol P04035-7.sdf Source_tran.sdf
 
 
-## RMSD calculation
 
-If two molecules are exactly the same then they possess the same 3D graph. In such case, the root-mean-square distance (RMSD) of corresponding atom pairs in 3D graphs can be calculated using two RDKit based tools (both are present in the folder utils).
+## Run meta-sensaasflex.py
 
-**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
-
-Syntax for ‘in place’ RMSD calculation:
-
-	python usils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
-	
-Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tran.txt:
-
-	python utils/rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
-
-
-**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
-
+As for **meta-sensaas.py** described above, this "meta" script only works with SDF format files. It allows to align several source and target molecules. 
 The syntax is:
 
-	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
+	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r nb -s score_type -l x
+
+Please read the above description of **meta-sensaas.py** for more information about options and outputs.
+
+
+## Miscellaneous Tools
+
+If you want that sensaas.py outputs Target and Source files in pcd and xyzrgb format, set the variable 'verbose' to 1 in the Python script sensaas.py. Those format files can be read and visualized using Open3D.
+
+For example:
+
+	python utils/visualize.py examples/VALSARTAN.xyzrgb
+	
+or:
+
+	python utils/visualize.py examples/VALSARTAN.pcd
+
+You can also convert a xyzrgb file into a pdb file for visualization with PyMOL
+
+	python utils/xyzrgb2dotspdb.py examples/VALSARTAN.xyzrgb
+	
+It will generate the file 'dots.pdb' that can be read with the molecular viewer PyMOL:
+
+	pymol dots.pdb
+
+Colors are class colors as defined above. In our implementation, labels aim to recapitulate typical pharmacophore features such as aromatic (colored in green), lipophilic (colored in white/grey) and polar groups (colored in red).
 
 
 ## Licenses
