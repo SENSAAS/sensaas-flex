@@ -114,6 +114,17 @@ Thus, we calculate a hybrid score = gfit + hfit scores - **gfit+hfit ranges betw
    - A gfit+hfit score close to 2.0 means a perfect superimposition.
    - A gfit+hfit score close to 0.0 means that there are no similarities between molecular structures.
 
+The eval mode evaluates the superimposition "in place" (without aligning). the syntax is:
+
+	python sensaas.py sdf molecule1.sdf sdf molecule2.sdf slog.txt eval
+
+Here, the resulting slog.txt contains final scores of molecule2.sdf on the last line.
+
+	sensaas.py sdf molecule2.sdf sdf molecule1.sdf slog.txt eval
+	
+Here, the resulting slog.txt contains final scores of molecule1.sdf on the last line.
+
+	
 
 ## Run meta-sensaas.py
 
@@ -224,7 +235,41 @@ or after executing meta-sensaas.py with the repeat option (State 1 is Target and
 	pymol examples/VALSARTAN.sdf sensaas-1.sdf
 
 
-## Run sensaasflex.pl
+## Run sensaasflex.py
+
+This "meta" script only works with SDF format files. This script allows to run flexible alignment of two shapes by optimizing the conformer of the Source. 
+
+The syntax is:
+
+	sensaasflex.py <target sdf file (read first structure only)> <source sdf file (to move; read first structure only)>
+
+Example
+
+	python sensaasflex.py examples/P04035-7.sdf examples/P04035-7-confs1.sdf
+
+Here, the source file P04035-7-confs1.sdf  is aligned (moved) on the target file P04035-7.sdf (experimental conformation) (that does not move).
+
+- The output file Source_tran.sdf contains the aligned (transformed) coordinates of the Source.
+- The output file tran.txt contains the transformation matrix applied to the input Source file.
+- The slogflex file details results with final scores of the aligned Source molecule on the last line. The content of the slogflex file may look like (of note, the result may vary from one run to another):
+- 
+  	Initial gfit= 0.338 cfit= 0.289 hfit= 0.252 gfit+hfit= 0.59
+	Round 1 gfit= 0.38 cfit= 0.307 hfit= 0.196 gfit+hfit= 0.576
+	Round 2 gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252
+	Best solution (Source_tran.sdf):
+	gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252
+
+Here, it indicates that the initial rigid alignment gives a solution with a gfit+hfit score = 0.59 and that the alignment obtained after the flexible optimization has a gfit+hfit score = 1.25 which is a much better fitness score.
+
+**RMSD calculation** (the two molecules are the same; they possess the same 3D graph)
+	
+	python utils/rdkit-CalcLigRMSD.py examples/P04035-7.sdf Source_tran.sdf 
+
+RMSD= 1.04
+
+**Visualization** You can use any molecular viewer. For instance, you can use PyMOL if installed.
+
+	pymol P04035-7.sdf Source_tran.sdf
 
 
 ## RMSD calculation
@@ -233,21 +278,20 @@ If two molecules are exactly the same then they possess the same 3D graph. In su
 
 **SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
 
-Syntax (‘in place’ RMSD calculation):
+Syntax for ‘in place’ RMSD calculation:
 
-	rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
+	python usils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
 	
-Syntax (minimizes RMSD and writes transformation matrix called rdkit-tran.txt):
+Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tran.txt:
 
-	rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
+	python utils/rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
+
 
 **CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
 
-In the present case study, we use that one because our atoms are not in the same order in the sdf files. We obtain:
+The syntax is:
 
-	rdkit-CalcLigRMSD.py P04035-7.sdf Source_tran.sdf
-
-RMSD= 3.36
+	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
 
 
 ## Licenses
