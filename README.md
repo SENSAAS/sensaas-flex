@@ -246,7 +246,7 @@ or after executing meta-sensaas.py with the repeat option (State 1 is Target and
 
 If two molecules are exactly the same then they possess the same 3D graph. In such case, the root-mean-square distance (RMSD) of corresponding atom pairs in 3D graphs can be calculated using two RDKit based tools (both are present in the folder utils).
 
-**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
+**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html)) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
 
 Syntax for ‘in place’ RMSD calculation:
 
