@@ -147,9 +147,7 @@ Thus, we calculate a hybrid score = gfit + hfit scores - **gfit+hfit ranges betw
 
 **Visualization:**
 
-You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
-
-	pymol examples/P04035-7.sdf Source_tran.sdf
+You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) Source_tran.sdf on the Target examples/P04035-7.sdf
 
 **RMSD calculation:**
 
@@ -215,9 +213,7 @@ It indicates that the best Source solution is the molecule number 5 of the file 
 
 **Visualization:**
 
-You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
-
-	pymol examples/P04035-7.sdf bestsensaas.sdf catsensaas.sdf
+You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) bestsensaas.sdf and catsensaas.sdf on the Target examples/P04035-7.sdf
 
 **RMSD calculation:**
 
@@ -322,10 +318,7 @@ It indicates that 2 clusters were created. File sensaas-1.sdf is the best soluti
 
 **Visualization:**
 
-You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
-
-	pymol examples/P04035-7.sdf sensaas-1.sdf sensaas-2.sdf cat-repeats.sdf
-
+You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) sensaas-1.sdf, sensaas-2.sdf and cat-repeats.sdf on the Target examples/P04035-7.sdf
 	
 ## Run sensaasflex.py (flexible alignments)
 
@@ -367,9 +360,7 @@ Source_tran.sdf contains a new conformer with a better similarity to the Target 
 
 **Visualization:**
 
-You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
-
-	pymol examples/P04035-7.sdf Source_tran.sdf
+You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) Source_tran.sdf on the Target examples/P04035-7.sdf
 
 Here we show that SENSAAS-Flex was able to explore the conformational space to find a very close solution to the experimental one. It improves the alignment over the rigid one. Indeed, the first rigid alignment using sensaas.py and  P04035-7-confs1.sdf had a gfit+hfit score of 0.608 and a RMSD value of 3.36 Å.
 
