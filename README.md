@@ -33,7 +33,7 @@ Flexible alignment of molecules using SENSAAS
 
 ## Requirements
 
-SENSAAS relies on the open-source library [Open3D](http://www.open3d.org). The current release of SENSAAS uses **Open3D version 0.12.0 along with Python3.7**.
+SENSAAS relies on the open-source library [Open3D](http://www.open3d.org). The current release of SENSAAS uses **Open3D version 0.12.0 along with Python3.7** and the cheminformatics toolkit [RDKit](https://www.rdkit.org/docs/index.html).
 
 Visit the following URL for using Python packages distributed via PyPI: [http://www.open3d.org/docs/release/getting_started.html](http://www.open3d.org/docs/release/getting_started.html) or conda: [https://anaconda.org/open3d-admin/open3d/files](https://anaconda.org/open3d-admin/open3d/files). For example, for windows-64, you can download *win-64/open3d-0.12.0-py37_0.tar.bz2*
 
@@ -53,7 +53,7 @@ Once Open3D downloaded:
   
  	conda install open3d-0.12.0-py37_0.tar.bz2
 
-Install RDKit (Open-Source Cheminformatics Software) that is compatible with Python 3.7 (eg: v2022.9.5)
+Install RDKit (Open-Source Cheminformatics Software) that is compatible with Python 3.7 (eg: v2022.9.5 [Old versions of RDKit](https://pypi.org/project/rdkit-pypi/))
 
 	pip install rdkit-pypi
 	
