@@ -53,7 +53,7 @@ Once Open3D downloaded:
   
  	conda install open3d-0.12.0-py37_0.tar.bz2
 
-Install RDKit (Open-Source Cheminformatics Software) that is compatible with Python 3.7 (eg: v2022.9.5 [Old versions of RDKit](https://pypi.org/project/rdkit-pypi/))
+Install RDKit (Open-Source Cheminformatics Software) that is compatible with Python 3.7 (eg: v2022.9.5 [look at older versions of RDKit](https://pypi.org/project/rdkit-pypi/))
 
 	pip install rdkit-pypi
 	
