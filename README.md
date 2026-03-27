@@ -85,7 +85,7 @@ Retrieve and unzip sensaas-flex repository. The directory containing executables
 	Not tested
 
 
-## Run Sensaas
+## Run Sensaas (rigid version; same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/)
 To align a Source molecule on a Target molecule, the syntax is:
 	
 	sensaas.py sdf molecule-target.sdf sdf molecule-source.sdf slog.txt optim
