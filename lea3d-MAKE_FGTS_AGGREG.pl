@@ -6,6 +6,9 @@
 	#windows requires 2 steps
 	$leaexe=~s/lea3d-MAKE_FGTS_AGGREG\.pl$//;
 	$leaexe=~s/\/$//;
+	if($leaexe eq ""){
+		$leaexe=".";
+	};
 	#print "perl scripts in $leaexe\n";
 	
 	if($filesdf eq ''){
@@ -199,7 +202,7 @@ sub make_fgts_split{
 	#rule 2: $nbbondsmin defines which size of acyclic to split 
 	$nbbondsmin=4;	
 
-	system("perl $leaexe/lea3d-MAKE_FGTS.pl $fsdf ");
+	chop($log=` perl $leaexe/lea3d-MAKE_FGTS.pl $fsdf `);
 
 	#make_fgts.sdf = ring.sdf fused_rings.sdf special.sdf linker.sdf substituent.sdf
 	#if molecule without ring then acyclic.sdf=molecule

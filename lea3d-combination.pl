@@ -6,6 +6,9 @@
    #windows requires 2 steps
    $leaexe=~s/lea3d-combination\.pl$//;
    $leaexe=~s/\/$//;
+   if($leaexe eq ""){
+   	$leaexe=".";
+   };
    #print "perl scripts in $leaexe\n";
    
    	#set 1 if want to keep original sdf datablock

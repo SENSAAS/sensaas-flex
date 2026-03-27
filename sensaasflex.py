@@ -21,30 +21,30 @@ except:
 
 # sys.argv[0] is the name of the program itself
 sensaasexe=sys.argv[0]
-sensaasexe=re.sub('\/sensaasflex\.py','',sensaasexe)
+sensaasexe=re.sub('sensaasflex\.py','',sensaasexe)
 
 whichexe='linux'
 if(whichexe in platform):
     # linux
-    rdkitminexe=sensaasexe + "/rdkit-min-iter.py"
-    sensaasexecicp=sensaasexe + "/sensaasCICP.py"
-    sensaasexegcicp=sensaasexe + "/sensaas.py"
-    leaexec=sensaasexe + "/lea3d-combination.pl"
-    leaexefgtagg=sensaasexe + "/lea3d-MAKE_FGTS_AGGREG.pl"
+    rdkitminexe=sensaasexe + "rdkit-min-iter.py"
+    sensaasexecicp=sensaasexe + "sensaasCICP.py"
+    sensaasexegcicp=sensaasexe + "sensaas.py"
+    leaexec=sensaasexe + "lea3d-combination.pl"
+    leaexefgtagg=sensaasexe + "lea3d-MAKE_FGTS_AGGREG.pl"
 elif platform == "darwin":
     # OS X - linux version?
-    rdkitminexe=sensaasexe + "/rdkit-min-iter.py"
-    sensaasexecicp=sensaasexe + "/sensaasCICP.py"
-    sensaasexegcicp=sensaasexe + "/sensaas.py"
-    leaexec=sensaasexe + "/lea3d-combination.pl"
-    leaexefgtagg=sensaasexe + "/lea3d-MAKE_FGTS_AGGREG.pl"
+    rdkitminexe=sensaasexe + "rdkit-min-iter.py"
+    sensaasexecicp=sensaasexe + "sensaasCICP.py"
+    sensaasexegcicp=sensaasexe + "sensaas.py"
+    leaexec=sensaasexe + "lea3d-combination.pl"
+    leaexefgtagg=sensaasexe + "lea3d-MAKE_FGTS_AGGREG.pl"
 else:
     #windows with conda
-    rdkitminexe="python " + sensaasexe + "\\" + "rdkit-min-iter.py"
-    sensaasexecicp="python " + sensaasexe + "\sensaasCICP.py"
-    sensaasexegcicp="python " + sensaasexe + "\sensaas.py"
-    leaexec="perl " + sensaasexe + "\lea3d-combination.pl"
-    leaexefgtagg="perl " + sensaasexe + "\lea3d-MAKE_FGTS_AGGREG.pl"
+    rdkitminexe="python " + sensaasexe + "rdkit-min-iter.py"
+    sensaasexecicp="python " + sensaasexe + "sensaasCICP.py"
+    sensaasexegcicp="python " + sensaasexe + "sensaas.py"
+    leaexec="perl " + sensaasexe + "lea3d-combination.pl"
+    leaexefgtagg="perl " + sensaasexe + "lea3d-MAKE_FGTS_AGGREG.pl"
 
 #print("exe %s and %s and %s" % (sensaasexe,sensaasexegcicp,sensaasexecicp))
 #print("perl %s and %s " % (leaexec,leaexefgtagg))
