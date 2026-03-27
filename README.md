@@ -85,7 +85,30 @@ Retrieve and unzip sensaas-flex repository. The directory containing executables
 	Not tested
 
 
-## Run Sensaas (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+## Introduction to the RMSD calculation tools
+
+If two molecules are exactly the same then they possess the same 3D graph. In such case, the root-mean-square distance (RMSD) of corresponding atom pairs in 3D graphs can be calculated using two RDKit based tools (both are present in the folder utils).
+
+
+**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html)) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
+
+Syntax for ‘in place’ RMSD calculation:
+
+	python utils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
+	
+Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tran.txt:
+
+	python utils/rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
+
+
+**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD)) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
+
+The syntax is:
+
+	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
+
+
+## Run sensaas.py (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
 **1. optim mode**
 
@@ -95,18 +118,19 @@ To align a Source molecule on a Target molecule, the syntax is:
 	
 Example:
 
-	sensaas.py sdf examples/IMATINIB.sdf sdf examples/IMATINIB_mv.sdf slog.txt optim
+	sensaas.py sdf examples/P04035-7.sdf sdf examples/P04035-7-confs1.sdf slog.txt optim
 	
 You may have to run the script as follows:
 
-	python sensaas.py sdf examples/IMATINIB.sdf sdf examples/IMATINIB_mv.sdf slog.txt optim
-
+	python sensaas.py sdf examples/P04035-7.sdf sdf examples/P04035-7-confs1.sdf slog.txt optim
 
 Don't worry if you get the following warning from Open3D: "*Open3D WARNING KDTreeFlann::SetRawData Failed due to no data.*". It is observed with conda on windows.
 
-Here, the source file IMATINIB_mv.sdf is aligned (**moved**) on the target file IMATINIB.sdf (**that does not move**). The output **tran.txt** contains the transformation matrix allowing the alignment of the source file (result in **Source_tran.sdf**). The **slog.txt** file details results with final scores of the aligned molecule (Source) on the last line. In the current example, the last line must look like:
+Here, the source file P04035-7-confs1.sdf is aligned (**moved**) on the target file P04035-7.sdf (**that does not move**). The output **tran.txt** contains the transformation matrix allowing the alignment of the source file (result in **Source_tran.sdf**). The **slog.txt** file details results with final scores of the aligned molecule (Source) on the last line. In the current example, the last line must look like:
 
-	gfit= 1.000 cfit= 0.999 hfit= 0.996 gfit+hfit= 1.996
+	gfit= 0.356 cfit= 0.302 hfit= 0.252 gfit+hfit= 0.608
+
+It indicates that the best alignment of the Source file (P04035-7-confs1.sdf) has a fitness score gfit+hfit = 0.61. 
 
 There are three different fitness scores but we only use 2 of them, gfit and hfit, to calculate gfit+hfit. More about [Fitness scores](https://github.com/SENSAAS/sensaas-py/blob/main/docs/index.rst#fitness-scores)
 
@@ -118,6 +142,22 @@ Thus, we calculate a hybrid score = gfit + hfit scores - **gfit+hfit ranges betw
 
    - A gfit+hfit score close to 2.0 means a perfect superimposition.
    - A gfit+hfit score close to 0.0 means that there are no similarities between molecular structures.
+
+Visualization:
+
+You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
+
+	pymol examples/P04035-7.sdf Source_tran.sdf
+
+RMSD calculation:
+
+In the present case study, we use rdkit-CalcLigRMSD.py because atoms are not arranged in the same order. We obtain:
+
+	rdkit-CalcLigRMSD.py P04035-7.sdf Source_tran.sdf
+	
+RMSD= 3.36
+
+
 
 **2. eval mode**
 
@@ -220,48 +260,6 @@ As described in the publication, outputs are:
 - sensaas-2.sdf contains the bioisosteric superimposition
 - sensaas-3.sdf contains the geometric-only superimposition
 
-## Visualization 
-
-You can use any molecular viewer. For instance, you can use PyMOL if installed (see optional packages) to load the Target and the aligned Source(s):
-
-after aligning IMATINIB_mv.sdf on IMATINIB.sdf using sensaas.py:
-
-	pymol examples/IMATINIB.sdf Source_tran.sdf 
-
-or after executing meta-sensaas.py with several molecules:
-
-	pymol examples/IMATINIB.sdf bestsensaas.sdf catsensaas.sdf
-	
-or after the post-processing:
-
-	pymol examples/IMATINIB.sdf ordered-catsensaas.sdf
-
-
-or after executing meta-sensaas.py with the repeat option (State 1 is Target and State 2 is the aligned Source):
-	
-	pymol examples/VALSARTAN.sdf sensaas-1.sdf
-
-
-## RMSD calculation
-
-If two molecules are exactly the same then they possess the same 3D graph. In such case, the root-mean-square distance (RMSD) of corresponding atom pairs in 3D graphs can be calculated using two RDKit based tools (both are present in the folder utils).
-
-**SymmFit** (author: Paolo Tosco; the code can be found at [https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html](https://www.mail-archive.com/rdkit-discuss@lists.sourceforge.net/msg04915.html)) which allows the minimization of RMSD value but only when the atoms in the two structure files are arranged in the same order. 
-
-Syntax for ‘in place’ RMSD calculation:
-
-	python utils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
-	
-Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tran.txt:
-
-	python utils/rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
-
-
-**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD)) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
-
-The syntax is:
-
-	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
 
 
 ## Run sensaasflex.py (flexible alignments)
@@ -272,7 +270,7 @@ The syntax is:
 
 	sensaasflex.py <target sdf file (read first structure only)> <source sdf file (to move; read first structure only)>
 
-Example
+Example:
 
 	python sensaasflex.py examples/P04035-7.sdf examples/P04035-7-confs1.sdf
 
@@ -295,13 +293,14 @@ Here, the source file P04035-7-confs1.sdf  is aligned (moved) on the target file
 Here, it indicates that the initial rigid alignment gives a solution with a gfit+hfit score = 0.59 and that the alignment obtained after the flexible optimization has a gfit+hfit score = 1.25 which is a much better fitness score.
 
 
-**RMSD calculation** (the two molecules are the same; they possess the same 3D graph but atoms are not arranged in the same order)
+RMSD calculation (the two molecules are the same; they possess the same 3D graph but atoms are not arranged in the same order):
 	
 	python utils/rdkit-CalcLigRMSD.py examples/P04035-7.sdf Source_tran.sdf 
 
 RMSD= 1.04
 
-**Visualization** You can use any molecular viewer. For instance, you can use PyMOL if installed.
+
+Visualization:
 
 	pymol P04035-7.sdf Source_tran.sdf
 
