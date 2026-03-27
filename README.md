@@ -85,7 +85,7 @@ Retrieve and unzip sensaas-flex repository. The directory containing executables
 	Not tested
 
 
-## Run Sensaas (rigid version - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+## Run Sensaas (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
 **1. optim mode**
 
@@ -257,14 +257,14 @@ Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tr
 	python utils/rdkit-symmFitRMSD.py -s mol1.sdf mol2.sdf
 
 
-**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
+**CalcLigRMSD** (author: Carmen Esposito; the code can be found at [https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD](https://github.com/cespos/rdkit/tree/add-CalcLigRMSD-for-prealigned-compounds/Contrib/CalcLigRMSD)) which allows the calculation of RMSD value of  ‘in place’ structures (without minimization) whatever the arrangement of atoms in the two structure files.
 
 The syntax is:
 
 	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
 
 
-## Run sensaasflex.py
+## Run sensaasflex.py (flexible alignments)
 
 This "meta" script only works with SDF format files. This script allows to run flexible alignment of two shapes by optimizing the conformer of the Source. 
 
@@ -302,7 +302,7 @@ RMSD= 1.04
 
 
 
-## Run meta-sensaasflex.py
+## Run meta-sensaasflex.py (flexible alignments)
 
 As for **meta-sensaas.py** described above, this "meta" script only works with SDF format files. It allows to align several source and target molecules. 
 The syntax is:
