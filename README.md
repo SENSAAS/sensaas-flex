@@ -380,7 +380,7 @@ This script **only works with SDF format files**. It allows to align several Sou
 
 Example:
 
-	python meta-sensaasflex.py examples/P04035-7.sdf examples/P04035-7-confs1.sdf
+	python meta-sensaasflex.py examples/P04035-7.sdf examples/P04035-7-confs.sdf
 	
 This script is suited for performing virtual screenings of SDF files containing several molecules (database mode). For example, if you want to process a sdf file containing several conformers for Target and/or Source.
 
@@ -391,6 +391,10 @@ Please read the above description of **meta-sensaas.py** for more information ab
 
 	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r 10
 
+Example:
+
+	python meta-sensaasflex.py examples/P04035-7.sdf examples/phenyl.sdf -r 10
+	
 The option -r allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule.
 
 Please read the above description of **meta-sensaas.py** for more information about option -r, outputs and post-processings.	
