@@ -109,9 +109,10 @@ The syntax is:
 
 	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
 
-We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
 ## Run sensaas.py (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+
+We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
 **1. optim mode**
 
@@ -184,6 +185,8 @@ or calculate the score of the Target P04035-7.sdf (see slog.txt):
 	
 
 ## Run meta-sensaas.py (rigid version - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+
+We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
 **1. Virtual Screening** 
 
@@ -320,6 +323,8 @@ You can use any molecular viewer (eg: PyMOL) to display the superimposition of t
 	
 ## Run sensaasflex.py (flexible alignments)
 
+We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
+
 This script **only works with SDF format files**. This script allows to run flexible alignment of two shapes by optimizing the conformer of the Source. 
 
 The syntax is:
@@ -364,6 +369,8 @@ Here we show that SENSAAS-Flex was able to explore the conformational space to f
 
 
 ## Run meta-sensaasflex.py (flexible alignments)
+
+We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
 This script **only works with SDF format files**. It allows to align several Source and Target molecules in a **virtual screening** mode or in a **repeat and cluster** mode.
 
