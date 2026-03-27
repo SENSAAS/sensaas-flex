@@ -137,7 +137,7 @@ Here, the resulting slog.txt contains final scores of molecule1.sdf on the last 
 
 **1. Virtual Screening** 
 
-This script is suited for performing virtual screenings of sdf files containing several molecules (database mode). For example, if you want to process a sdf file containing several conformers for Target and/or Source. A similarity matrix is provided along with a sdf file that contains all aligned Sources. The syntax is:
+This script is suited for performing virtual screenings of **SDF files (only)** containing several molecules (database mode). For example, if you want to process a sdf file containing several conformers for Target and/or Source. A similarity matrix is provided along with a sdf file that contains all aligned Sources. The syntax is:
 
  	meta-sensaas.py molecules-target.sdf molecules-source.sdf
  
