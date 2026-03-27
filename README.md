@@ -309,17 +309,31 @@ RMSD= 1.04
 
 ## Run meta-sensaasflex.py (flexible alignments)
 
-As for **meta-sensaas.py** described above, this "meta" script only works with SDF format files. It allows to align several source and target molecules. 
-The syntax is:
+This script **only works with SDF format files**. It allows to align several Source and Target molecules in a **virtual screening** mode or in a **repeat and cluster** mode.
 
-	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r nb -s score_type -l x
+**In a virtual screening mode**, the syntax is:
 
-Please read the above description of **meta-sensaas.py** for more information about options and outputs.
+	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf
+
+This script is suited for performing virtual screenings of SDF files containing several molecules (database mode). For example, if you want to process a sdf file containing several conformers for Target and/or Source.
+
+Please read the above description of **meta-sensaas.py** for more information about options -s or -l, outputs and post-processings.
+
+
+**In a repeat and cluster mode**, the syntax is:
+
+	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r 10
+
+The option -r allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule.
+
+Please read the above description of **meta-sensaas.py** for more information about options -r, outputs and post-processings.	
+
 
 
 ## Miscellaneous Tools
 
-If you want that sensaas.py outputs Target and Source files in pcd and xyzrgb format, set the variable 'verbose' to 1 in the Python script sensaas.py. Those format files can be read and visualized using Open3D.
+If you want that sensaas.py outputs Target and Source files in pcd and xyzrgb format, set the variable 'verbose' to 1 in the Python script sensaas.py. 
+Those file formats can be read and visualized using Open3D.
 
 For example:
 
@@ -337,7 +351,7 @@ It will generate the file 'dots.pdb' that can be read with the molecular viewer 
 
 	pymol dots.pdb
 
-Colors are class colors as defined above. In our implementation, labels aim to recapitulate typical pharmacophore features such as aromatic (colored in green), lipophilic (colored in white/grey) and polar groups (colored in red).
+Colors are class colors as defined above. In our implementation, labels aim to recapitulate typical pharmacophore features such as aromatic (colored in green), lipophilic (colored in white/grey) and polar groups (colored in red). More about [Colors](https://github.com/SENSAAS/sensaas-py/blob/main/docs/index.rst#colors)
 
 
 ## Licenses
