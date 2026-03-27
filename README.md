@@ -61,6 +61,8 @@ Install RDKit (Open-Source Cheminformatics Software) that is compatible with Pyt
 
   	conda install conda-forge::pymol-open-source==2.4.0
 	
+If installation failed using conda, then you can find and install a version for your computer [https://pymolwiki.org](https://pymolwiki.org](PyMOL Wiki) 
+
 Retrieve and unzip sensaas-flex repository in your desired folder. See below for running the programs **sensaas.py** or **meta-sensaas.py** for using the rigid version or **sensaasflex.py** or **meta-sensaasflex.py** for using the flexible version. The directory containing executables is called sensaas-flex-main.
 
 ## Linux
