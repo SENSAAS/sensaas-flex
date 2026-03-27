@@ -109,6 +109,7 @@ The syntax is:
 
 	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
 
+We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
 ## Run sensaas.py (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
