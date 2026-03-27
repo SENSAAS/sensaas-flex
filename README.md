@@ -266,7 +266,7 @@ The syntax is:
 
 ## Run sensaasflex.py (flexible alignments)
 
-This "meta" script only works with SDF format files. This script allows to run flexible alignment of two shapes by optimizing the conformer of the Source. 
+This script **only works with SDF format files**. This script allows to run flexible alignment of two shapes by optimizing the conformer of the Source. 
 
 The syntax is:
 
