@@ -295,7 +295,7 @@ Here, the source file P04035-7-confs1.sdf  is aligned (moved) on the target file
 Here, it indicates that the initial rigid alignment gives a solution with a gfit+hfit score = 0.59 and that the alignment obtained after the flexible optimization has a gfit+hfit score = 1.25 which is a much better fitness score.
 
 
-**RMSD calculation** (the two molecules are the same; they possess the same 3D graph)
+**RMSD calculation** (the two molecules are the same; they possess the same 3D graph but atoms are not arranged in the same order)
 	
 	python utils/rdkit-CalcLigRMSD.py examples/P04035-7.sdf Source_tran.sdf 
 
