@@ -87,7 +87,7 @@ Retrieve and unzip sensaas-flex repository. The directory containing executables
 
 ## Run Sensaas (rigid version - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
-1. **optim** mode
+**1. optim mode**
 
 To align a Source molecule on a Target molecule, the syntax is:
 	
@@ -119,8 +119,7 @@ Thus, we calculate a hybrid score = gfit + hfit scores - **gfit+hfit ranges betw
    - A gfit+hfit score close to 2.0 means a perfect superimposition.
    - A gfit+hfit score close to 0.0 means that there are no similarities between molecular structures.
 
-
-2. **eval** mode
+**2. eval mode**
 
 The eval mode evaluates the superimposition "in place" (without aligning). the syntax is:
 
@@ -142,7 +141,7 @@ This script is suited for performing virtual screenings of sdf files containing 
 
  	meta-sensaas.py molecules-target.sdf molecules-source.sdf
  
-**Example**
+Example
  
  The following example works with 2 files from the directory examples/
 
