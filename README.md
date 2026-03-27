@@ -20,11 +20,13 @@ Flexible alignment of molecules using SENSAAS
 
  - Uses a surface-based representation that also displays pharmacophore features
 
+ - Flexible alignments i.e. an optimisation of the conformation of the query molecule
+
  - Allows matchings and submatchings e.g. aligning a fragment on a large molecule
 
  - Provides the superimposition of 3D molecular graphs
 
- - Provides Similarity scores
+ - Provides similarity scores
 
  - Is free and open source
 
