@@ -282,10 +282,14 @@ Here, the source file P04035-7-confs1.sdf  is aligned (moved) on the target file
 - The output file tran.txt contains the transformation matrix applied to the input Source file.
 - The slogflex file details results with final scores of the aligned Source molecule on the last line. The content of the slogflex file may look like (of note, the result may vary from one run to another):
 
-  		Initial gfit= 0.338 cfit= 0.289 hfit= 0.252 gfit+hfit= 0.59 
-		Round 1 gfit= 0.38 cfit= 0.307 hfit= 0.196 gfit+hfit= 0.576 
-		Round 2 gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252 
-		Best solution (Source_tran.sdf): 
+  		Initial gfit= 0.338 cfit= 0.289 hfit= 0.252 gfit+hfit= 0.59
+  
+		Round 1 gfit= 0.38 cfit= 0.307 hfit= 0.196 gfit+hfit= 0.576
+  
+		Round 2 gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252
+  
+		Best solution (Source_tran.sdf):
+  
 		gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252 
 
 Here, it indicates that the initial rigid alignment gives a solution with a gfit+hfit score = 0.59 and that the alignment obtained after the flexible optimization has a gfit+hfit score = 1.25 which is a much better fitness score.
