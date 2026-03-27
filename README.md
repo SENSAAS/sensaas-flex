@@ -378,6 +378,10 @@ This script **only works with SDF format files**. It allows to align several Sou
 
 	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf
 
+Example:
+
+	python meta-sensaasflex.py examples/P04035-7.sdf examples/P04035-7-confs1.sdf
+	
 This script is suited for performing virtual screenings of SDF files containing several molecules (database mode). For example, if you want to process a sdf file containing several conformers for Target and/or Source.
 
 Please read the above description of **meta-sensaas.py** for more information about options -s or -l, outputs and post-processings.
