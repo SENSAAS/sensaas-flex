@@ -116,7 +116,7 @@ To align a Source molecule on a Target molecule, the syntax is:
 	
 	sensaas.py sdf molecule-target.sdf sdf molecule-source.sdf slog.txt optim
 	
-Example:
+**Example:**
 
 	sensaas.py sdf examples/P04035-7.sdf sdf examples/P04035-7-confs1.sdf slog.txt optim
 	
@@ -143,19 +143,19 @@ Thus, we calculate a hybrid score = gfit + hfit scores - **gfit+hfit ranges betw
    - A gfit+hfit score close to 2.0 means a perfect superimposition.
    - A gfit+hfit score close to 0.0 means that there are no similarities between molecular structures.
 
-Visualization:
+**Visualization:**
 
 You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
 
 	pymol examples/P04035-7.sdf Source_tran.sdf
 
-RMSD calculation:
+**RMSD calculation:**
 
 In the present case study, we use rdkit-CalcLigRMSD.py because atoms are not arranged in the same order. We obtain:
 
-	rdkit-CalcLigRMSD.py P04035-7.sdf Source_tran.sdf
+	rdkit-CalcLigRMSD.py examples/P04035-7.sdf Source_tran.sdf
 	
-RMSD= 3.36
+RMSD= 3.36 A
 
 
 
@@ -171,6 +171,15 @@ Here, the resulting slog.txt contains final scores of molecule2.sdf on the last 
 	
 Here, the resulting slog.txt contains final scores of molecule1.sdf on the last line.
 
+**Example:**
+
+In our present case study, we can recalculate fitness scores of the aligned Source_tran.sdf (see slog.txt):
+
+	python sensaas.py sdf examples/P04035-7.sdf sdf Source_tran.sdf slog.txt eval
+
+or calculate the score of the Target P04035-7.sdf (see slog.txt):
+
+	python sensaas.py sdf Source_tran.sdf sdf examples/P04035-7.sdf slog.txt eval
 	
 
 ## Run meta-sensaas.py (rigid version - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
