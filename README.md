@@ -315,7 +315,7 @@ It indicates that 2 clusters were created. File sensaas-1.sdf is the best soluti
 
 **Visualization:**
 
-You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) sensaas-1.sdf, sensaas-2.sdf and cat-repeats.sdf on the Target examples/P04035-7.sdf
+You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) sensaas-1.sdf, sensaas-2.sdf... and cat-repeats.sdf on the Target examples/P04035-7.sdf
 	
 ## Run sensaasflex.py (flexible alignments)
 
