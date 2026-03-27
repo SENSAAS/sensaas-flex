@@ -250,7 +250,7 @@ If two molecules are exactly the same then they possess the same 3D graph. In su
 
 Syntax for ‘in place’ RMSD calculation:
 
-	python usils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
+	python utils/rdkit-symmFitRMSD.py -r mol1.sdf mol2.sdf
 	
 Syntax for minimizing the RMSD and writing transformation matrix called rdkit-tran.txt:
 
