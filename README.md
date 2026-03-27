@@ -57,11 +57,6 @@ Install RDKit (Open-Source Cheminformatics Software) that is compatible with Pyt
 
 	pip install rdkit-pypi
 	
-(Optional) Additional packages for visualization with PyMOL that is compatible with the current environnment:
-
-  	conda install conda-forge::pymol-open-source==2.4.0
-	
-If installation failed using conda, then you can find and install a version of PyMOL for your computer at [PyMOL Wiki](https://pymolwiki.org) or [https://pymol.org/](https://pymol.org/)
 
 Retrieve and unzip sensaas-flex repository in your desired folder. See below for running the programs **sensaas.py** or **meta-sensaas.py** for using the rigid version or **sensaasflex.py** or **meta-sensaasflex.py** for using the flexible version. The directory containing executables is called sensaas-flex-main.
 
@@ -75,16 +70,21 @@ Install:
 The open-Source Cheminformatics Software RDKit must be installed. More information on RDKit can be found at [https://www.rdkit.org/docs/Install.html](https://www.rdkit.org/docs/Install.html) 
 
 3. RDKit
-
-(Optional) Install additional packages for visualization with PyMOL:
-
-4. PyMOL (a molecular viewer; more information at [https://pymolwiki.org](https://pymolwiki.org)) or [https://pymol.org/](https://pymol.org/)
   
 Retrieve and unzip sensaas-flex repository. The directory containing executables is called sensaas-flex-main.
 
 ## MacOS
 
 	Not tested
+
+
+## Molecular viewer
+
+We suggest you install a molecular viewer so you can visualize the molecular alignments provided by SENSAAS and SENSAAS-Flex.
+
+PyMOL is a well-known software program for molecular visualisation available for Windows, Linux or macOS. More information at [PyMOL Wiki](https://pymolwiki.org) or [https://pymol.org/](https://pymol.org/)
+
+Of note, we had trouble installing PyMOL in the current conda environment (python 3.7 and open3D 0.12.0). The installation method described in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/) no longer works.
 
 
 ## Introduction to the RMSD calculation tools
