@@ -119,6 +119,7 @@ Thus, we calculate a hybrid score = gfit + hfit scores - **gfit+hfit ranges betw
    - A gfit+hfit score close to 2.0 means a perfect superimposition.
    - A gfit+hfit score close to 0.0 means that there are no similarities between molecular structures.
 
+
 2. **eval** mode
 
 The eval mode evaluates the superimposition "in place" (without aligning). the syntax is:
