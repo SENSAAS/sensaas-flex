@@ -11,7 +11,7 @@ Flexible alignment of molecules using SENSAAS
 
 **Documentation**: Full documentation is available at [https://github.com/SENSAAS/sensaas-flex/docs/SENSAAS-Flex-documentation.pdf](https://github.com/SENSAAS/sensaas-flex/blob/main/docs/SENSAAS-Flex-documentation.pdf)
 
-**Website**: A web demo to use SENSAAS or SENSAAS-Flex is available at https://chemoinfo.ipmc.cnrs.fr/SENSAAS/index.html
+**Website**: A web demo to use SENSAAS is available at https://chemoinfo.ipmc.cnrs.fr/SENSAAS/index.html
 
 **Tutorial**: These [videos](https://www.youtube.com/channel/UC3cjM1j8cQ-95ev0DNxRMOA) on YouTube provide tutorials
 
