@@ -333,7 +333,7 @@ The syntax is:
 
 	sensaasflex.py <target sdf file (read first structure only)> <source sdf file (to move; read first structure only)>
 
-Example:
+**Example:**
 
 	python sensaasflex.py examples/P04035-7.sdf examples/P04035-7-confs1.sdf
 
@@ -344,29 +344,32 @@ Here, the source file P04035-7-confs1.sdf  is aligned (moved) on the target file
 - The slogflex file details results with final scores of the aligned Source molecule on the last line. The content of the slogflex file may look like (of note, the result may vary from one run to another):
 
   		Initial gfit= 0.338 cfit= 0.289 hfit= 0.252 gfit+hfit= 0.59
-  
 		Round 1 gfit= 0.38 cfit= 0.307 hfit= 0.196 gfit+hfit= 0.576
-  
 		Round 2 gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252
-  
 		Best solution (Source_tran.sdf):
-  
 		gfit= 0.695 cfit= 0.649 hfit= 0.557 gfit+hfit= 1.252 
 
 Here, it indicates that the initial rigid alignment gives a solution with a gfit+hfit score = 0.59 and that the alignment obtained after the flexible optimization has a gfit+hfit score = 1.25 which is a much better fitness score.
 
 
-RMSD calculation (the two molecules are the same; they possess the same 3D graph but atoms are not arranged in the same order):
+**RMSD calculation:**
+
+In the present case study, we use rdkit-CalcLigRMSD.py because atoms are not arranged in the same order. We obtain:
 	
 	python utils/rdkit-CalcLigRMSD.py examples/P04035-7.sdf Source_tran.sdf 
 
-RMSD= 1.04
+RMSD= 1.04 A
+
+Source_tran.sdf contains a new conformer with a better similarity to the Target (RMSD = 1.04 A) than the input P04035-7-confs1.sdf when a rigid alignment is performed (see above; RMSD = 3.36 A).
 
 
-Visualization:
+**Visualization:**
 
-	pymol P04035-7.sdf Source_tran.sdf
+You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
 
+	pymol examples/P04035-7.sdf Source_tran.sdf
+
+Here we show that SENSAAS-Flex was able to explore the conformational space to find a very close solution to the experimental one. It improves the alignment over the rigid one. Indeed, the first rigid alignment using sensaas.py and  P04035-7-confs1.sdf had a gfit+hfit score of 0.608 and a RMSD value of 3.36 Å.
 
 
 ## Run meta-sensaasflex.py (flexible alignments)
