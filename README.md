@@ -129,7 +129,7 @@ Here, the resulting slog.txt contains final scores of molecule1.sdf on the last 
 
 	
 
-## Run meta-sensaas.py
+## Run meta-sensaas.py (rigid version - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
 **1. Virtual Screening** 
 
