@@ -312,11 +312,8 @@ Outputs are:
 The last line of the output at your prompt may look like:
 
 	Rank ; Hybrid score gfit + hfit ; Shape gfit ; Color hfit ; percentage of solutions ; Alignment in SDF file format
-
 	1 ; 1.885 ; 0.907 ; 0.977 ; 90.00 ; sensaas-1.sdf
-
 	2 ; 1.522 ; 0.692 ; 0.831 ; 10.00 ; sensaas-2.sdf
-
 	cat-repeats.sdf contains the 10 sdf solutions
 
 It indicates that 2 clusters were created. File sensaas-1.sdf is the best solution of cluster 1 and sensaas-2.sdf is the best solution of cluster 2. Both solutions are perfectly aligned on substructures of P04035-7.sdf.
