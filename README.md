@@ -256,10 +256,7 @@ or if you want to only retrieve solutions having a gfit+hfit score above a defin
 
 Visualization:
 
-You can use any molecular viewer. For instance, you can use PyMOL if installed to load the Target and the aligned Source(s):
-
-	pymol examples/P04035-7.sdf ordered-catsensaas.sdf
-
+You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) ordered-catsensaas.sdf on the Target examples/P04035-7.sdf
 	
 **Option -s**
 
