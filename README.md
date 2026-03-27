@@ -322,7 +322,7 @@ Please read the above description of **meta-sensaas.py** for more information ab
 
 The option -r allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule.
 
-Please read the above description of **meta-sensaas.py** for more information about options -r, outputs and post-processings.	
+Please read the above description of **meta-sensaas.py** for more information about option -r, outputs and post-processings.	
 
 
 
