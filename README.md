@@ -279,7 +279,7 @@ Example:
 
 This option allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule. The syntax is:
 
-  	meta-sensaas.py target.sdf source.sdf -r 10
+  	meta-sensaas.py target.sdf source.sdf -r nb
  
  here 10 alignments of the Source will be generated and clustered. Outputs are:
  
@@ -389,7 +389,7 @@ Please read the above description of **meta-sensaas.py** for more information ab
 
 **In a repeat and cluster mode**, the syntax is:
 
-	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r 10
+	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r nb
 
 Example:
 
