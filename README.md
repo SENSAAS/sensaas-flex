@@ -277,9 +277,9 @@ Example:
 
 **2. Finding alternative alignments and Clustering**
 
-This option allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule. The syntax is:
+This option allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule. The syntax is (for 10 calculations):
 
-  	meta-sensaas.py target.sdf source.sdf -r nb
+  	meta-sensaas.py target.sdf source.sdf -r 10
  
  here 10 alignments of the Source will be generated and clustered. Outputs are:
  
@@ -292,13 +292,13 @@ This option allows to repeat in order to find alternative alignments when they e
 
 The following example works with 2 files from the directory examples/
 
-	meta-sensaas.py examples/P04035-7.sdf examples/phenyl.sdf -r 10
+	meta-sensaas.py examples/P04035-7.sdf examples/phenyl.sdf -r 20
 	
 You may have to run the script as follows:
 
-	python meta-sensaas.py examples/P04035-7.sdf examples/phenyl.sdf -r 10
+	python meta-sensaas.py examples/P04035-7.sdf examples/phenyl.sdf -r 20
 
-Here 10 alignments of the Source will be generated and clustered.
+Here 20 alignments of the Source will be generated and clustered.
 
 Outputs are:
 
@@ -313,7 +313,7 @@ The last line of the output at your prompt may look like:
 	Rank ; Hybrid score gfit + hfit ; Shape gfit ; Color hfit ; percentage of solutions ; Alignment in SDF file format
 	1 ; 1.885 ; 0.907 ; 0.977 ; 90.00 ; sensaas-1.sdf
 	2 ; 1.522 ; 0.692 ; 0.831 ; 10.00 ; sensaas-2.sdf
-	cat-repeats.sdf contains the 10 sdf solutions
+	cat-repeats.sdf contains the 20 sdf solutions
 
 It indicates that 2 clusters were created. File sensaas-1.sdf is the best solution of cluster 1 and sensaas-2.sdf is the best solution of cluster 2. Both solutions are perfectly aligned on substructures of P04035-7.sdf.
 
@@ -387,13 +387,13 @@ This script is suited for performing virtual screenings of SDF files containing 
 Please read the above description of **meta-sensaas.py** for more information about options -s or -l, outputs and post-processings.
 
 
-**In a repeat and cluster mode**, the syntax is:
+**In a repeat and cluster mode**, the syntax is (for 10 calculations):
 
-	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r nb
+	python meta-sensaasflex.py molecules-target.sdf molecules-source.sdf -r 10
 
 Example:
 
-	python meta-sensaasflex.py examples/P04035-7.sdf examples/phenyl.sdf -r 10
+	python meta-sensaasflex.py examples/P04035-7.sdf examples/phenyl.sdf -r 20
 	
 The option -r allows to repeat in order to find alternative alignments when they exist as for example when aligning a fragment on a large molecule.
 
