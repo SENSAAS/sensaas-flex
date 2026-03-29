@@ -1,5 +1,5 @@
 # sensaas-flex
-Flexible alignment of molecules using SENSAAS
+Rigid or flexible alignment of molecules using SENSAAS
 
 [![badgepython](https://forthebadge.com/images/badges/made-with-python.svg)](https://www.python.org/downloads/release/python-370/)  [![forthebadge](https://forthebadge.com/images/badges/built-with-science.svg)](https://chemoinfo.ipmc.cnrs.fr/)
 
