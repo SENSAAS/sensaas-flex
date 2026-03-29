@@ -432,7 +432,7 @@ SENSAAS code is released under [the 3-Clause BSD License](https://opensource.org
 Copyright (c) 2018-2021, CNRS, Inserm, Université Côte d'Azur, Dominique Douguet and Frédéric Payan, All rights reserved.
 
 ## Reference
-[SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space](https://doi.org/10.1093/bioinformatics/btae105)
+[Biyuzan et al., SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space](https://doi.org/10.1093/bioinformatics/btae105)
 
 Bibtex format :
 
