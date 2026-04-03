@@ -21,7 +21,7 @@
         $nbfgtmax=20;
 
 	if($init eq '' || $type eq ''){
-		die "usage: <>.pl <file.sdf> <type: fgts or parts or user_generic_name (eg: part_)> < (option1) the combination includes the complete structure molecule ? 1 (yes) 0 (no, default) or 2 (only the complete structure in case of bioisoster replacement)> <option2  (option1 must be set) combination.sdf includes isolated fragments 1 (yes) 0 (no, default)> \n"; 
+		die "usage: <>.pl <file.sdf> <type: fgts or parts or user_generic_name (eg: part_)> 2 0 \n"; 
 	};
 	
 	$nbinput=&nbsdf($init);
@@ -238,12 +238,6 @@ foreach $moli (1..$nbinput){
 				};	
 			};
 		};
-	};
-	if($nbfileout> 0){
-		#	print "$nbfilenew additional combinations in $filesdf\n";
-	}
-	else{
-		#	print "$nbfilenew combinations in $filesdf\n";
 	};
 
 	if($nbfilenew==0){
