@@ -111,7 +111,7 @@ The syntax is:
 	python utils/rdkit-CalcLigRMSD.py mol1.sdf mol2.sdf
 
 
-## Run sensaas.py (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+## Run sensaas.py (rigid alignment - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
 We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
@@ -185,7 +185,7 @@ or calculate the score of the Target P04035-7.sdf (see slog.txt):
 	python sensaas.py sdf Source_tran.sdf sdf examples/P04035-7.sdf slog.txt eval
 	
 
-## Run meta-sensaas.py (rigid version - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+## Run meta-sensaas.py (rigid alignment - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
 We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
