@@ -185,7 +185,7 @@ or calculate the score of the Target P04035-7.sdf (see slog.txt):
 	python sensaas.py sdf Source_tran.sdf sdf examples/P04035-7.sdf slog.txt eval
 	
 
-## Run meta-sensaas.py (rigid alignment - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
+## Run meta-sensaas.py (rigid alignments - same commands as in [sensaas-py](https://github.com/SENSAAS/sensaas-py/blob/main/))
 
 We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
@@ -322,7 +322,7 @@ It indicates that 2 clusters were created. File sensaas-1.sdf is the best soluti
 
 You can use any molecular viewer (eg: PyMOL) to display the superimposition of the aligned molecule(s) sensaas-1.sdf, sensaas-2.sdf... and cat-repeats.sdf on the Target examples/P04035-7.sdf
 	
-## Run sensaasflex.py (flexible alignments)
+## Run sensaasflex.py (flexible alignment)
 
 We recommend creating a separate directory for your project to avoid mixing executables in sensaas-flex-main with your files.
 
