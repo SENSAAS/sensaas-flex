@@ -1,9 +1,7 @@
 # sensaas‑flex
-
+**SENSAAS‑Flex** is the first extension of [SENSAAS](https://github.com/SENSAAS/sensaas-py). 
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?style=for-the-badge&logo=python)](https://www.python.org/downloads/release/python-370/)
 [![Built with Science](https://img.shields.io/badge/Built%20with-Science-blue?style=for-the-badge)]((https://chemoinfo.ipmc.cnrs.fr/))
-
-**SENSAAS‑Flex** is the first extension of [SENSAAS](https://github.com/SENSAAS/sensaas-py). 
 
 **SENSAAS** and **SENSAAS-Flex** are shape-based alignment softwares which allow to superimpose molecules in a rigid or flexible manner, respectively. They are based on the publications [SenSaaS: Shape-based Alignment by Registration of Colored Point-based Surfaces](https://onlinelibrary.wiley.com/doi/full/10.1002/minf.202000081) and [SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space](https://doi.org/10.1093/bioinformatics/btae105). 
 
@@ -11,7 +9,7 @@
 
 **Documentation**: Full documentation is available at [https://github.com/SENSAAS/sensaas-flex/docs/SENSAAS-Flex-documentation.pdf](https://github.com/SENSAAS/sensaas-flex/blob/main/docs/SENSAAS-Flex-documentation.pdf)
 
-**Tutorial**: For a quick start with SENSAAS, we recommend watching the tutorial videos available on the dedicated YouTube channel: [videos](https://www.youtube.com/channel/UC3cjM1j8cQ-95ev0DNxRMOA)
+**Tutorial**: For a quick start with SENSAAS, we recommend watching the videos available on the dedicated YouTube channel: [videos](https://www.youtube.com/channel/UC3cjM1j8cQ-95ev0DNxRMOA)
 
 **Website**: A web server providing easy‑to‑use online versions of SENSAAS and SENSAAS‑Flex is also available at https://chemoinfo.ipmc.cnrs.fr
 
