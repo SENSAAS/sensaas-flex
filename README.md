@@ -1,14 +1,13 @@
-# sensaas-flex
-Rigid or flexible alignment of molecules using SENSAAS
+# sensaas‑flex
 
 [![Made with Python](https://img.shields.io/badge/Made%20with-Python-blue?style=for-the-badge&logo=python)](https://www.python.org/downloads/release/python-370/)
 [![Built with Science](https://img.shields.io/badge/Built%20with-Science-blue?style=for-the-badge)]((https://chemoinfo.ipmc.cnrs.fr/))
 
+**SENSAAS‑Flex** is the first extension of [SENSAAS](https://github.com/SENSAAS/sensaas-py). 
+
 **SENSAAS** and **SENSAAS-Flex** are shape-based alignment softwares which allow to superimpose molecules in a rigid or flexible manner, respectively. They are based on the publications [SenSaaS: Shape-based Alignment by Registration of Colored Point-based Surfaces](https://onlinelibrary.wiley.com/doi/full/10.1002/minf.202000081) and [SENSAAS-Flex: a joint optimization approach for aligning 3D shapes and exploring the molecular conformation space](https://doi.org/10.1093/bioinformatics/btae105). 
 
-
-![example](/images/alignment.png)
-
+![example](/images/alignment_flex.png)
 
 **Documentation**: Full documentation is available at [https://github.com/SENSAAS/sensaas-flex/docs/SENSAAS-Flex-documentation.pdf](https://github.com/SENSAAS/sensaas-flex/blob/main/docs/SENSAAS-Flex-documentation.pdf)
 
